@@ -17,6 +17,7 @@ char *concat_all(char *name, char *sep, char *value);
 char *_strdup(char *str);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **tokenizer(char *input_str);
+int _strcmp(char *s1, char *s2);
 
 
 

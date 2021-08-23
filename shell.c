@@ -21,6 +21,10 @@ int main(void)
 			printf("%s\n", argv[i]);
 			i++;
 		}
+		if (!_strcmp(argv[0], "exit"))
+		{
+			break;
+		}
 	}
 	free(argv);
 	free(buffer);
