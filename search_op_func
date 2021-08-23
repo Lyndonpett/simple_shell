@@ -1,0 +1,9 @@
+#include "shell.h"
+/**
+ *
+ *
+ */
+int searchop_func()
+{
+	func_finder type[] = {
+		{
