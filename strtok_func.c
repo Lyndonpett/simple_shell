@@ -15,7 +15,7 @@ char **tokenizer(char *input_str)
 		}
 	}
 
-	argv = malloc(8 * token_count + 2);
+	argv = malloc(8 * (token_count + 2));
 
 	if (argv == NULL)
 	{
@@ -31,6 +31,7 @@ char **tokenizer(char *input_str)
 			tokenize = strtok(NULL, " ");
 			token_inc++;
 		}
+		argv[token_inc] = NULL;
 	}
 	return (argv);
 }
