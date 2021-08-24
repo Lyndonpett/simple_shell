@@ -12,7 +12,7 @@
 
 extern char **environ;
 
-char *_getenv(const char *environment);
+char **_getenv(char *env);
 void _puts(char *str);
 int _putchar(char c);
 int _strlen(char *s);
@@ -23,11 +23,22 @@ char **tokenizer(char *input_str);
 int _strcmp(char *s1, char *s2);
 char *grab_name(char *full_line);
 char **env_tokenizer(char *input_str);
+int func_finder(char **argv, char *buffer);
+int sh_exit(char **argv, char *buffer);
+int sh_env(void);
+int sh_setenv(char **argv);
+int sh_unsetenv(char **argv);
+int sh_cd(char **argv);
+int sh_alias(char **argv);
+int everything_free(char **pointer_array);
 
-typedef struct func_finder {
+
+
+
+typedef struct builtins {
 	char *argv;
 	int (*func)();
-} func_finder;
+} builtins;
 
 
 #endif /* SHELL_H */

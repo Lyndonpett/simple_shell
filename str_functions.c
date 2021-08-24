@@ -130,3 +130,15 @@ int _strcmp(char *s1, char *s2)
 	}
 	return ((unsigned char)(*s1) - (unsigned char)(*s2));
 }
+
+int everything_free(char **pointer_array)
+{
+	int i = 0;
+
+	while (pointer_array[i])
+	{
+		free(pointer_array[i]);
+		i++;
+	}
+	free(pointer_array);
+}

@@ -5,24 +5,33 @@
  * @name: Name of the Env var
  * Return: Val of Env val
  */
-char *_getenv(const char *environment)
+char **_getenv(char *env)
 {
-	int line_content, line_number;
-	char *env_path= NULL; /** Environment Path that we want to return **/
+	int content, line;
+	char *name = NULL; /** Environment Path that we want to return **/
 
-	for (line_number = 0; environ[line_number] != NULL; line_number++)
+	for (line = 0; environ[line] != NULL; line++)
 	{
-		if (_strcmp(grab_name(environ[line_number]), "PATH") == 0)
+		for(content = 0; environ[line][content] != '='; content++)
 		{
-			return(*env_tokenizer(env_path));
+			if (environ[line][content] != env[content])
+			{
+				break;
+			}
+			if (environ[line][content] == env[content])
+			{
+				if (env[content + 1] == '\0' && environ[line][content + 1] == '=')
+				{
+					name = _strdup(&(environ[line][content + 2]));
+					return(env_tokenizer(name));
+				}
+			}
+
 		}
 	}
-	return(NULL);
+	return (NULL);
 }
-/**
- *
- *
- */
+/* MAYBE CUT MAYBE NOT
 char *grab_name(char *full_line)
 {
 	int i, length;
@@ -41,7 +50,7 @@ char *grab_name(char *full_line)
 	}
 	return(after_name);
 }
-
+*/
 char **env_tokenizer(char *input_str)
 {
 	int j;
@@ -73,7 +82,7 @@ char **env_tokenizer(char *input_str)
 			tokenize = strtok(NULL, ":");
 			token_inc++;
 		}
-	env_tokens[token_inc] = NULL;
+		env_tokens[token_inc] = NULL;
 	}
 	return (env_tokens);
 }

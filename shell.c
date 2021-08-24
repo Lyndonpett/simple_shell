@@ -3,7 +3,7 @@
 int main(void)
 {
 	char *buffer = NULL;
-	char **argv;
+	char **argv, **path_tokens;
 	size_t buffer_length = 0;
 	ssize_t userinput;
 
@@ -12,18 +12,16 @@ int main(void)
 		printf("$ ");
 		userinput = getline(&buffer, &buffer_length, stdin);
 		if (userinput < 0)
-			return (-1);
-		argv = tokenizer(buffer);
-		if (!_strcmp(argv[0], "exit"))
-		{
 			break;
-		}
-		if (!_strcmp(argv[0], "env"))
+		argv = tokenizer(buffer);
+		if (func_finder(argv, buffer) == 1)
 		{
-			_getenv("fart");
+			continue;
 		}
+		path_tokens = _getenv("PATH");
+		everything_free(path_tokens);
+		free(argv);
 	}
-	free(argv);
 	free(buffer);
 
 	return (0);
