@@ -1,26 +1,26 @@
 #include "shell.h"
+
 /**
- * _strcat - function that concatenates two strings
- * @dest: a character pointer we are inputting
- * @src: a character pointer we are inputting
- * Return: char
+ * _strcat - concatenates two strings
+ *
+ * @dest: First string.
+ * @src: Second string.
+ *
+ * Return: Dest.
  */
-char *_strcat(char *dest, char *src)
+/*char *_strcat(char *dest, char *src)
 {
-	int i = 0;
-	int j = 0;
+	char *ptr = dest + _strlen(dest);
 
-	while (dest[i] != '\0')
-		i++;
-
-	while (src[j] != '\0')
+	while (*src != '\0')
 	{
-		dest[i + j] = src[j];
-		j++;
+		*ptr++ = *src++;
 	}
-	dest[i + j] = '\0';
+
+	*ptr = '\0';
+
 	return (dest);
-}
+}*/
 
 /**
  * _puts - prints a string
@@ -69,4 +69,36 @@ int everything_free(char **pointer_array)
 		i++;
 	}
 	free(pointer_array);
+}
+/**
+ * _strcat - concatenates two strings
+ *
+ * @dest: First string.
+ * @src: Second string.
+ *
+ * Return: Dest.
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int a, p, x;
+	char *newcmd = NULL;
+
+	for (p = 0; dest[p] != '\0'; p++)
+	{
+	}
+	for (a = 0; src[a] != '\0'; a++)
+	{
+	}
+	newcmd = malloc(sizeof(char) * (a + p + 1));
+	for (x = 0; x < p; x++)
+	{
+		newcmd[x] = dest[x];
+	}
+	for (x = 0; x < a; x++)
+	{
+		newcmd[x + p] = src[x];
+	}
+	newcmd[x + p] = '\0';
+	return (newcmd);
 }

@@ -32,9 +32,9 @@ char *dir(char **argv, char **path_token)
 				return (exe);
 			}
 		}
-	closedir(directory);
+		closedir(directory);
 	}
-return(NULL);
+	return (NULL);
 }
 
 /**
@@ -44,8 +44,8 @@ return(NULL);
  */
 char *exe_maker(char *store, char **argv)
 {
-	char *slash;
-	char *commando;
+	char *slash = NULL;
+	char *commando = NULL;
 
 	/* Adding a slash to the first string */
 	slash = _strcat(store, "/");
@@ -55,4 +55,31 @@ char *exe_maker(char *store, char **argv)
 	/* Need to free slash because strcat mallocs */
 	free(slash);
 	return (commando);
+}
+
+/**
+ *
+ *
+ *
+ */
+
+int execute(char *xecutable, char **argv)
+{
+	pid_t pid;
+
+	pid = fork();
+
+	if (pid == -1)
+	{
+		perror("Fork failed\n");
+	}
+	if (pid == 0)
+	{
+		execve(xecutable, argv, environ);
+	}
+	else
+	{
+		wait(NULL);
+	}
+	return (0);
 }
