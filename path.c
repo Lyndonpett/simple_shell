@@ -8,22 +8,22 @@
 char **_getenv(char *env)
 {
 	int content, line;
-	char *name = NULL; /** Environment Path that we want to return **/
-
+	char *name = NULL;
+	/* iterate each line in the environment */
 	for (line = 0; environ[line] != NULL; line++)
-	{
+	{	/* iterate each letter until we see a = */
 		for(content = 0; environ[line][content] != '='; content++)
 		{
 			if (environ[line][content] != env[content])
 			{
 				break;
-			}
+			}	/* check that this env var name is what we're looking for */
 			if (environ[line][content] == env[content])
-			{
+			{	/* we've hit the end of our search string */
 				if (env[content + 1] == '\0' && environ[line][content + 1] == '=')
-				{
+				{	/* duplicate everything past the equals */
 					name = _strdup(&(environ[line][content + 2]));
-					return(env_tokenizer(name));
+					return(env_tokenizer(name)); /* parse and return */
 				}
 			}
 
