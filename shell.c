@@ -2,6 +2,7 @@
 
 int main(void)
 {
+	char *money_sign = "$ ";
 	char *buffer = NULL;
 	char **argv, **path_tokens;
 	size_t buffer_length = 0;
@@ -9,7 +10,8 @@ int main(void)
 
 	while (1)
 	{
-		printf("$ ");
+		if (isatty(STDIN_FILENO))
+			write(STDIN_FILENO, money_sign, _strlen(money_sign));
 		userinput = getline(&buffer, &buffer_length, stdin);
 		if (userinput < 0)
 			break;
