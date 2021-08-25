@@ -32,7 +32,10 @@ int sh_unsetenv(char **argv);
 int sh_cd(char **argv);
 int sh_alias(char **argv);
 int everything_free(char **pointer_array);
+char *_strcat(char *dest, char *src);
 
+char *dir(char **argv, char **path_token);
+char *exe_maker(char *store, char **argv);
 
 
 
