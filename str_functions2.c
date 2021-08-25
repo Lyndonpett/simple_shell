@@ -81,24 +81,24 @@ int everything_free(char **pointer_array)
 
 char *_strcat(char *dest, char *src)
 {
-	int a, p, x;
-	char *newcmd = NULL;
+	int i, j, x;
+	char *new = NULL;
 
-	for (p = 0; dest[p] != '\0'; p++)
+	for (j = 0; dest[j] != '\0'; j++)
 	{
 	}
-	for (a = 0; src[a] != '\0'; a++)
+	for (i = 0; src[i] != '\0'; i++)
 	{
 	}
-	newcmd = malloc(sizeof(char) * (a + p + 1));
-	for (x = 0; x < p; x++)
+	new = malloc(sizeof(char) * (i + j + 1));
+	for (x = 0; x < j; x++)
 	{
-		newcmd[x] = dest[x];
+		new[x] = dest[x];
 	}
-	for (x = 0; x < a; x++)
+	for (x = 0; x < i; x++)
 	{
-		newcmd[x + p] = src[x];
+		new[x + j] = src[x];
 	}
-	newcmd[x + p] = '\0';
-	return (newcmd);
+	new[x + j] = '\0';
+	return (new);
 }
