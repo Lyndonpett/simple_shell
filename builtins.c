@@ -18,7 +18,7 @@ int sh_env(void)
 		{ /* stores into string */
 			string = (&(environ[line][content]));
 			/* prints with write to std output */
-			write(STDOUT_FILENO, string, strlen(string));
+			write(STDOUT_FILENO, string, _strlen(string));
 			break;
 		}
 		_putchar('\n');
