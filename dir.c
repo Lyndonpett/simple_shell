@@ -18,6 +18,7 @@ char *dir(char **argv, char **path_token)
 	/* looping through the path_token */
 	for (i = 0; path_token[i] != NULL; i++)
 	{
+		printf("interating path token: %s\n", path_token[i]);
 		/* Use Opendir to access all the path directories */
 		directory = opendir(path_token[i]);
 		/* Reading the open directories */
@@ -26,14 +27,17 @@ char *dir(char **argv, char **path_token)
 			/* If we find a match proceed on with the if loop */
 			if (_strcmp(argv[0], dir_store->d_name) == 0)
 			{
+				printf("We found it\n");
 				store = path_token[i];
 				exe = exe_maker(store, argv);
 				closedir(directory);
 				return (exe);
 			}
 		}
+
 		closedir(directory);
 	}
+	printf("Returning null\n");
 	return (NULL);
 }
 

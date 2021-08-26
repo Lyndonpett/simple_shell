@@ -34,7 +34,11 @@ int main(void)
 		}
 		path_tokens = _getenv("PATH");
 		xcuteable = dir(argv, path_tokens);
-		execute(xcuteable, argv);
+		if (xcuteable != NULL)
+		{
+			execute(xcuteable, argv);
+		}
+		free(xcuteable);
 		everything_free(path_tokens);
 		free(argv);
 	}

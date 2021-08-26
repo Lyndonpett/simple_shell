@@ -59,11 +59,11 @@ int _strcmp(char *s1, char *s2)
  *
  *
  */
-int everything_free(char **pointer_array)
+void everything_free(char **pointer_array)
 {
 	int i = 0;
 
-	while (pointer_array[i])
+	while (pointer_array[i] != NULL)
 	{
 		free(pointer_array[i]);
 		i++;

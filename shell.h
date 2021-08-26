@@ -31,9 +31,10 @@ int sh_setenv(char **argv);
 int sh_unsetenv(char **argv);
 int sh_cd(char **argv);
 int sh_alias(char **argv);
-int everything_free(char **pointer_array);
+void everything_free(char **pointer_array);
 char *_strcat(char *dest, char *src);
 int execute(char *xecutable, char **argv);
+void _puts(char *str);
 
 
 char *dir(char **argv, char **path_token);
