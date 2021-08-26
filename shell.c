@@ -4,8 +4,8 @@ int main(void)
 {
 	char *money_sign = "$ ";
 	char *buffer = NULL;
-	char **argv, **path_tokens;
-	char *xcuteable;
+	char **argv = NULL, **path_tokens = NULL;
+	char *xcuteable = NULL;
 	size_t buffer_length = 0;
 	ssize_t userinput;
 
@@ -37,6 +37,10 @@ int main(void)
 		if (xcuteable != NULL)
 		{
 			execute(xcuteable, argv);
+		}
+		else
+		{
+			continue;
 		}
 		free(xcuteable);
 		everything_free(path_tokens);

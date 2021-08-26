@@ -56,11 +56,12 @@ char *grab_name(char *full_line)
 char **env_tokenizer(char *input_str)
 {
 	int i;
-	int token_inc = 0, token_count = 0;
+	int token_inc = 0, token_count;
 	char **env_tokens = NULL;
 	char *tokenize = NULL;
 
-	token_count = 0;
+	/* starting at one, bc there will be one less delimiter than token */
+	token_count = 1;
 	for (i = 0; input_str[i] != '\0'; i++)
 	{
 		if (input_str[i] == ':')
@@ -69,7 +70,7 @@ char **env_tokenizer(char *input_str)
 		}
 	}
 
-	env_tokens = malloc(8 * (token_count + 3));
+	env_tokens = malloc(sizeof(char *) * (token_count + 2));
 
 	if (env_tokens == NULL)
 	{
@@ -78,14 +79,13 @@ char **env_tokenizer(char *input_str)
 	else
 	{
 		tokenize = strtok(input_str, ":");
-
-		while (token_inc < (token_count + 1))
+		while (token_inc < (token_count))
 		{
 			env_tokens[token_inc] = _strdup(tokenize);
 			tokenize = strtok(NULL, ":");
 			token_inc++;
 		}
-		env_tokens[token_count + 1] = NULL;
+		env_tokens[token_inc] = NULL;
 	}
 	free(input_str);
 	return (env_tokens);
