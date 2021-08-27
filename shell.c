@@ -2,31 +2,46 @@
 
 int main(void)
 {
+	char *money_sign = "$ ";
 	char *buffer = NULL;
-	char **argv;
+	char **argv, **path_tokens;
+	char *xcuteable;
 	size_t buffer_length = 0;
 	ssize_t userinput;
-	int i;
 
 	while (1)
 	{
-		i = 0;
-		printf("$ ");
-		userinput = getline(&buffer, &buffer_length, stdin);
-		if (userinput < 0)
-			return (-1);
-		argv = tokenizer(buffer);
-		while (argv[i])
+		if (isatty(STDIN_FILENO))
 		{
-			printf("%s\n", argv[i]);
-			i++;
+			write(STDOUT_FILENO, money_sign, _strlen(money_sign));
 		}
-		if (!_strcmp(argv[0], "exit"))
+		else
 		{
 			break;
 		}
+		userinput = getline(&buffer, &buffer_length, stdin);
+		if (userinput == -1)
+			break;
+		argv = tokenizer(buffer);
+		if (argv[0] == NULL)
+		{
+			continue;
+		}
+		if (func_finder(argv, buffer) == 1)
+		{
+			free(argv);
+			continue;
+		}
+		path_tokens = _getenv("PATH");
+		xcuteable = dir(argv, path_tokens);
+		if (xcuteable != NULL)
+		{
+			execute(xcuteable, argv);
+		}
+		free(xcuteable);
+		everything_free(path_tokens);
+		free(argv);
 	}
-	free(argv);
 	free(buffer);
 
 	return (0);
