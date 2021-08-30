@@ -37,7 +37,7 @@ $
 vagrant@vagrant-ubuntu64:~/simple_shell$ echo "/bin/ls" | ./hsh
 AUTHORS      builtins.c  func_finder.c  path.c     realloc_function.c  shell.h           str_functions.c
 builtins2.c  dir.c       hsh            README.md  shell.c             str_functions2.c  strtok_func.c
-vagrant@vagrant-ubuntu64:~/simple_shell$ echo "/bin/ls" | ./hsh
+vagrant@vagrant-ubuntu64:~/simple_shell$
 ```
 # Builtins
 
