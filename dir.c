@@ -1,7 +1,9 @@
 #include "shell.h"
 /**
- *
- *
+ * dir -  function that opens the directory
+ * @argv: The string that is being tested
+ * @path_token: Token to be searched
+ * Return: Dir on succes and NULL otherwise
  */
 char *dir(char **argv, char **path_token)
 {
