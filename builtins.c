@@ -1,12 +1,19 @@
 #include "shell.h"
-
+/**
+ *
+ *
+ */
 int sh_exit(char **argv, char *buffer)
 {
 	free(argv);
 	free(buffer);
 	exit(0);
 }
-
+/**
+ *
+ *
+ *
+ */
 int sh_env(void)
 {
 	int line, content;
@@ -25,19 +32,29 @@ int sh_env(void)
 	}
 	return (0);
 }
-
+/**
+ *
+ *
+ *
+ */
 int sh_setenv(char **argv)
 {
 	argv = argv;
 	return (0);
 }
-
+/**
+ *
+ *
+ */
 int sh_unsetenv(char **argv)
 {
 	argv = argv;
 	return (0);
 }
-
+/**
+ *
+ *
+ */
 int sh_cd(char **argv)
 {
 	argv = argv;
