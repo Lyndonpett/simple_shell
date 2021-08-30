@@ -7,21 +7,20 @@ int main(void)
 	char **argv, **path_tokens;
 	char *xcuteable;
 	size_t buffer_length = 0;
-	ssize_t userinput;
+	/*ssize_t userinput;*/
 
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-		{
 			write(STDOUT_FILENO, money_sign, _strlen(money_sign));
-		}
-		else
+		if (getline(&buffer, &buffer_length, stdin) == EOF)
 		{
-			break;
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			exit(0);
 		}
-		userinput = getline(&buffer, &buffer_length, stdin);
-		if (userinput == -1)
-			break;
+		if (buffer == NULL)
+			exit(0);
 		argv = tokenizer(buffer);
 		if (argv[0] == NULL)
 		{
