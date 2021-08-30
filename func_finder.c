@@ -1,7 +1,10 @@
 #include "shell.h"
 /**
- *
- *
+ * func_finder - function to find the
+ * corresponding function that matches the user input
+ * @argv: The string being checked
+ * @buffer:Buffer being inputted
+ * Return: 0 on success, 1 on fail
  */
 int func_finder(char **argv, char *buffer)
 {

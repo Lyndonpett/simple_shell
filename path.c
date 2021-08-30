@@ -2,7 +2,7 @@
 /**
  * _getenv -  function that gets value of
  * env variable by its input
- * @name: Name of the Env var
+ * @env: env var being inputted
  * Return: Val of Env val
  */
 char **_getenv(char *env)
@@ -33,26 +33,12 @@ char **_getenv(char *env)
 	}
 	return (NULL);
 }
-/* MAYBE CUT MAYBE NOT
-char *grab_name(char *full_line)
-{
-	int i, length;
-	char *after_name;
-
-	for (i = 0; full_line[i] != '='; i++)
-	{
-		length = i;
-	}
-
-	after_name = malloc(sizeof(char) * length);
-
-	for (i = 0; i <= length; i++)
-	{
-		after_name[i] = full_line[i];
-	}
-	return(after_name);
-}
-*/
+/**
+ * env_tokenizer - function that tokenizes the
+ * string and specific parameters.
+ * @input_str: The string that is inputted
+ * Return: Env Token on success, NULL otherwise
+ */
 char **env_tokenizer(char *input_str)
 {
 	int i;
