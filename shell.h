@@ -11,17 +11,23 @@
 #include <sys/stat.h>
 #include <dirent.h>
 
+/** Global calling var**/
 extern char **environ;
 
-char **_getenv(char *env);
-void _puts(char *str);
-int _putchar(char c);
+
+
+/** Helper Functions for String **/
 int _strlen(char *s);
-char *concat_all(char *name, char *sep, char *value);
 char *_strdup(char *str);
+int _strcmp(char *s1, char *s2);
+char *_strcat(char *dest, char *src);
+
+
+char **_getenv(char *env);
+int _putchar(char c);
+char *concat_all(char *name, char *sep, char *value);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **tokenizer(char *input_str);
-int _strcmp(char *s1, char *s2);
 char *grab_name(char *full_line);
 char **env_tokenizer(char *input_str);
 int func_finder(char **argv, char *buffer);
@@ -32,7 +38,6 @@ int sh_unsetenv(char **argv);
 int sh_cd(char **argv);
 int sh_alias(char **argv);
 void everything_free(char **pointer_array);
-char *_strcat(char *dest, char *src);
 int execute(char *xecutable, char **argv);
 void _puts(char *str);
 
