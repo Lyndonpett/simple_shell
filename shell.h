@@ -40,9 +40,13 @@ void _puts(char *str);
 char *dir(char **argv, char **path_token);
 char *exe_maker(char *store, char **argv);
 
-
-
-typedef struct builtins {
+/**
+ * struct builtins - struct to handle builtins
+ * @argv: The string
+ * @func: The corresponding function
+ */
+typedef struct builtins
+{
 	char *argv;
 	int (*func)();
 } builtins;
