@@ -1,28 +1,6 @@
 #include "shell.h"
 
 /**
- * _strcat - concatenates two strings
- *
- * @dest: First string.
- * @src: Second string.
- *
- * Return: Dest.
- */
-/*char *_strcat(char *dest, char *src)
-{
-	char *ptr = dest + _strlen(dest);
-
-	while (*src != '\0')
-	{
-		*ptr++ = *src++;
-	}
-
-	*ptr = '\0';
-
-	return (dest);
-}*/
-
-/**
  * _puts - prints a string
  * @str: pointer to string
  */
@@ -56,8 +34,10 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- *
- *
+ * everything_free - function to free
+ * everything
+ * @pointer_array: Char pointing at the array being tested
+ * Return: Void
  */
 void everything_free(char **pointer_array)
 {
@@ -72,10 +52,8 @@ void everything_free(char **pointer_array)
 }
 /**
  * _strcat - concatenates two strings
- *
  * @dest: First string.
  * @src: Second string.
- *
  * Return: Dest.
  */
 
