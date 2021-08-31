@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * tokenizer - function to help tokenize
+ * certain variables
+ * @input_str: the inputted string
+ * Return: argv
+ */
 char **tokenizer(char *input_str)
 {
 	int token_inc = 0, token_count = 0, i;
