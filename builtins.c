@@ -1,7 +1,9 @@
 #include "shell.h"
 /**
- *
- *
+ * sh_exit - function that exits
+ * @argv: The string being inputted
+ * @buffer: The buffer character
+ * Return: 0 if everything executes properly
  */
 int sh_exit(char **argv, char *buffer)
 {
@@ -10,9 +12,8 @@ int sh_exit(char **argv, char *buffer)
 	exit(0);
 }
 /**
- *
- *
- *
+ * sh_env -  function to help with env var
+ * Return: 0 if everything executes properly
  */
 int sh_env(void)
 {
@@ -33,9 +34,9 @@ int sh_env(void)
 	return (0);
 }
 /**
- *
- *
- *
+ * sh_setenv - function to help setenv var
+ * @argv: The string being inputted
+ * Return: 0 on success
  */
 int sh_setenv(char **argv)
 {
@@ -43,8 +44,9 @@ int sh_setenv(char **argv)
 	return (0);
 }
 /**
- *
- *
+ * sh_unsetenv - Function to unset env var
+ * @argv: The string being inputted
+ * Return: 0 on success
  */
 int sh_unsetenv(char **argv)
 {
@@ -52,8 +54,9 @@ int sh_unsetenv(char **argv)
 	return (0);
 }
 /**
- *
- *
+ * sh_cd - 
+ * @argv: the string being inputted
+ * Return: 0 on success
  */
 int sh_cd(char **argv)
 {
