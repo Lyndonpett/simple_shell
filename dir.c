@@ -47,9 +47,12 @@ char *dir(char **argv, char **path_token)
 }
 
 /**
- *
- *
- *
+ * exe_maker - function that helps add a
+ * slash to the first string and concat
+ * string with the slash
+ * @store: the path_token being inputted
+ * @argv: the string being inputted
+ * Return: The concatted string
  */
 char *exe_maker(char *store, char **argv)
 {
@@ -67,9 +70,11 @@ char *exe_maker(char *store, char **argv)
 }
 
 /**
- *
- *
- *
+ * execute - Function to help with pid
+ * process and forking
+ * @xecutable:character to execute on
+ * @argv: String that is being inputted
+ * Return: 0 on success
  */
 
 int execute(char *xecutable, char **argv)
