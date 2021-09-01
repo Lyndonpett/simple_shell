@@ -23,7 +23,8 @@ int main(int ac, char **av)
 		if (getline(&buffer, &buffer_length, stdin) == EOF)
 		{
 			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "\n", 1), free(buffer), exit(0);
+				write(STDOUT_FILENO, "\n", 1);
+			free(buffer), exit(0);
 		}
 		counter++;
 		if (buffer == NULL)
@@ -45,7 +46,6 @@ int main(int ac, char **av)
 		everything_free(path_tokens);
 		free(argv);
 	}
-	free(argv);
-	free(buffer);
+	free(argv), free(buffer);
 	return (0);
 }
