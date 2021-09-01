@@ -23,8 +23,7 @@ int main(int ac, char **av)
 		if (getline(&buffer, &buffer_length, stdin) == EOF)
 		{
 			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "\n", 1);
-			free(buffer), exit(0);
+				write(STDOUT_FILENO, "\n", 1), free(buffer), exit(0);
 		}
 		counter++;
 		if (buffer == NULL)
@@ -41,7 +40,8 @@ int main(int ac, char **av)
 		xcuteable = dir(argv, path_tokens, av, counter);
 		if (xcuteable != NULL)
 			execute(xcuteable, argv);
-		free(xcuteable);
+		if (argv[0][0] != '/')
+			free(xcuteable);
 		everything_free(path_tokens);
 		free(argv);
 	}
