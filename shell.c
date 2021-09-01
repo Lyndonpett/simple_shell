@@ -41,7 +41,8 @@ int main(int ac, char **av)
 		xcuteable = dir(argv, path_tokens, av, counter);
 		if (xcuteable != NULL)
 			execute(xcuteable, argv);
-		free(xcuteable);
+		if (argv[0][0] != '/')
+			free(xcuteable);
 		everything_free(path_tokens);
 		free(argv);
 	}
