@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		if (buffer == NULL)
 			exit(0);
 		argv = tokenizer(buffer);
-		if (argv[0] == NULL)
+		if (argv == NULL || argv[0] == NULL)
 			continue;
 		if (func_finder(argv, buffer) == 1)
 		{
