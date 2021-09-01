@@ -1,0 +1,35 @@
+.TH SIMPLE_SHELL "1" "September 01, 2021" "Simple Shell Man Page"
+
+.SH NAME
+.B hsh \- Simple shell implementation of command line - A Holberton Project
+
+.SH SYNOPSIS
+.B ./hsh
+
+
+.SH DESCRIPTION
+.B hsh is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file. 
+
+.SH OVERVIEW
+.B Shell is a program that reads input, interprets the line, and executes the command.
+
+.SH DIRECTIONS
+To run hsh please follow the directions below:
+.P
+First compile all of the .c files in the repository by typing
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+Now you can enter the interactive mode by typing the following in the terminal
+.RS
+.B $ ./hsh
+.P
+.RE
+When executed properly, a prompt "$" will appear in the terminal line waiting for a command input.
+
+.SH BUILTINS
+.RS Information about the Builtin commands for hsh.
+.B EXIT
+.B - The hsh shell process is terminated.
