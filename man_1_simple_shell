@@ -8,7 +8,7 @@
 
 
 .SH DESCRIPTION
-.B hsh is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file. 
+.B hsh is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file.
 
 .SH OVERVIEW
 .B Shell is a program that reads input, interprets the line, and executes the command. Works both in interactive and non-interactive modes.
