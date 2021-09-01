@@ -31,5 +31,18 @@ When executed properly, a prompt "$" will appear in the terminal line waiting fo
 
 .SH BUILTINS
 .RS Information about the Builtin commands for hsh.
-.B EXIT
+.B exit
 .B - The hsh shell process is terminated.
+
+.B env
+.B - Prints all the environmental variables.
+
+.B ls
+.B - Lists all the files in the currently working directory
+
+.SH SEE ALSO
+sh(1)
+
+.SH AUTHORS
+Lyndon Pettersson <3266@holbertonschool.com>
+Tommy Kim <3268@holbertonschool.com>
