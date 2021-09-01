@@ -41,8 +41,17 @@ When executed properly, a prompt "$" will appear in the terminal line waiting fo
 .B - Lists all the files in the currently working directory
 
 .SH SEE ALSO
-sh(1)
+sh(1), cd(1p), echo(1p), exit(1p)
+
+.SH EXIT STATUS
+.B 0 - Everything was executed properly
+.PP
+.B 1 - Error
+
+.SH BUGS
+No known bugs at the moment. Please contact if any unknown bugs are present
 
 .SH AUTHORS
-Lyndon Pettersson <3266@holbertonschool.com>
-Tommy Kim <3268@holbertonschool.com>
+.B Lyndon Pettersson <3266@holbertonschool.com>
+.PP
+.B Tommy Kim <3268@holbertonschool.com>
