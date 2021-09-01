@@ -1,5 +1,9 @@
 #include "shell.h"
 
+/**
+ * main - prints the shell
+ * Return: zero.
+ */
 int main(void)
 {
 	char *money_sign = "$ ";
@@ -16,8 +20,7 @@ int main(void)
 		if (getline(&buffer, &buffer_length, stdin) == EOF)
 		{
 			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "\n", 1);
-			exit(0);
+				write(STDOUT_FILENO, "\n", 1), exit(0);
 		}
 		if (buffer == NULL)
 			exit(0);
@@ -42,6 +45,5 @@ int main(void)
 		free(argv);
 	}
 	free(buffer);
-
 	return (0);
 }
