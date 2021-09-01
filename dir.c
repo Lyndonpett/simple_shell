@@ -3,6 +3,8 @@
  * dir -  function that opens the directory
  * @argv: The string that is being tested
  * @path_token: Token to be searched
+ * @av: the command line
+ * @counter: the counter.
  * Return: Dir on succes and NULL otherwise
  */
 char *dir(char **argv, char **path_token, char **av, int counter)
