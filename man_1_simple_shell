@@ -57,6 +57,9 @@ Now you can enter the non-interactive mode by typing the following in the termin
 .B ls
 .B - Lists all the files in the currently working directory
 
+.B cd
+.B - Change directory
+
 .SH OPTIONS
 There are currently no options.
 
