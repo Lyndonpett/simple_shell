@@ -4,14 +4,16 @@
  * main - prints the shell
  * Return: zero.
  */
-int main(void)
+int main(int ac, char **av)
 {
 	char *money_sign = "$ ";
 	char *buffer = NULL;
 	char **argv, **path_tokens;
 	char *xcuteable;
 	size_t buffer_length = 0;
+	int counter = 0;
 	/*ssize_t userinput;*/
+	(void)ac;
 
 	while (1)
 	{
@@ -23,6 +25,7 @@ int main(void)
 				write(STDOUT_FILENO, "\n", 1);
 			exit(0);
 		}
+		counter++;
 		if (buffer == NULL)
 			exit(0);
 		argv = tokenizer(buffer);
@@ -34,7 +37,7 @@ int main(void)
 			continue;
 		}
 		path_tokens = _getenv("PATH");
-		xcuteable = dir(argv, path_tokens);
+		xcuteable = dir(argv, path_tokens, av, counter);
 		if (xcuteable != NULL)
 		{
 			execute(xcuteable, argv);

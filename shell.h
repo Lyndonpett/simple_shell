@@ -14,14 +14,11 @@
 /** Global calling var**/
 extern char **environ;
 
-
-
 /** Helper Functions for String **/
 int _strlen(char *s);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 char *_strcat(char *dest, char *src);
-
 
 char **_getenv(char *env);
 int _putchar(char c);
@@ -41,8 +38,7 @@ void everything_free(char **pointer_array);
 int execute(char *xecutable, char **argv);
 void _puts(char *str);
 
-
-char *dir(char **argv, char **path_token);
+char *dir(char **argv, char **path_token, char **av, int counter);
 char *exe_maker(char *store, char **argv);
 
 /**
@@ -55,6 +51,5 @@ typedef struct builtins
 	char *argv;
 	int (*func)();
 } builtins;
-
 
 #endif /* SHELL_H */

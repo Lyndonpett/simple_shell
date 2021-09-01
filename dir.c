@@ -5,12 +5,13 @@
  * @path_token: Token to be searched
  * Return: Dir on succes and NULL otherwise
  */
-char *dir(char **argv, char **path_token)
+char *dir(char **argv, char **path_token, char **av, int counter)
 {
 	struct dirent *dir_store;
 	DIR *directory = NULL;
 	int i;
 	char *exe = NULL, *store = NULL;
+	char *format = "%s: %d: %s: not found\n";
 
 	/* Testing to see if its already an executable */
 	if (argv[0][0] == '/')
@@ -39,7 +40,7 @@ char *dir(char **argv, char **path_token)
 		}
 		else
 		{
-			perror(argv[0]);
+			fprintf(stderr, format, av[0], counter, argv[0]);
 		}
 		closedir(directory);
 	}
