@@ -20,15 +20,14 @@ int main(void)
 		if (getline(&buffer, &buffer_length, stdin) == EOF)
 		{
 			if (isatty(STDIN_FILENO))
-				write(STDOUT_FILENO, "\n", 1), exit(0);
+				write(STDOUT_FILENO, "\n", 1);
+			exit(0);
 		}
 		if (buffer == NULL)
 			exit(0);
 		argv = tokenizer(buffer);
 		if (argv[0] == NULL)
-		{
 			continue;
-		}
 		if (func_finder(argv, buffer) == 1)
 		{
 			free(argv);
@@ -44,6 +43,7 @@ int main(void)
 		everything_free(path_tokens);
 		free(argv);
 	}
+	free(argv);
 	free(buffer);
 	return (0);
 }
