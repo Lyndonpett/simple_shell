@@ -2,6 +2,8 @@
 
 /**
  * main - prints the shell
+ * @ac: void.
+ * @av: the orginal argument for shell.
  * Return: zero.
  */
 int main(int ac, char **av)
@@ -14,7 +16,6 @@ int main(int ac, char **av)
 	int counter = 0;
 	/*ssize_t userinput;*/
 	(void)ac;
-
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -23,7 +24,7 @@ int main(int ac, char **av)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
-			exit(0);
+			free(buffer), exit(0);
 		}
 		counter++;
 		if (buffer == NULL)
@@ -39,9 +40,7 @@ int main(int ac, char **av)
 		path_tokens = _getenv("PATH");
 		xcuteable = dir(argv, path_tokens, av, counter);
 		if (xcuteable != NULL)
-		{
 			execute(xcuteable, argv);
-		}
 		free(xcuteable);
 		everything_free(path_tokens);
 		free(argv);
