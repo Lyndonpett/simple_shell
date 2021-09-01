@@ -14,7 +14,7 @@ int main(int ac, char **av)
 	char *xcuteable;
 	size_t buffer_length = 0;
 	int counter = 0;
-	/*ssize_t userinput;*/
+
 	(void)ac;
 	while (1)
 	{
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
-			free(buffer), exit(0);
+			free(buffer), exit(errno);
 		}
 		counter++;
 		if (buffer == NULL)

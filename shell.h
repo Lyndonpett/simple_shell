@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <errno.h>
 
 /** Global calling var**/
 extern char **environ;

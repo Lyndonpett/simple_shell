@@ -9,6 +9,10 @@ int sh_exit(char **argv, char *buffer)
 {
 	free(argv);
 	free(buffer);
+	if (errno != 0)
+	{
+		exit(127);
+	}
 	exit(0);
 }
 /**
