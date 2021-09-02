@@ -30,11 +30,14 @@ char *grab_name(char *full_line);
 char **env_tokenizer(char *input_str);
 int func_finder(char **argv, char *buffer, int poopno);
 int sh_exit(char **argv, char *buffer, int poopno);
+
+/** Shell Helper **/
 int sh_env(void);
 int sh_setenv(char **argv);
 int sh_unsetenv(char **argv);
 int sh_cd(char **argv);
 int sh_alias(char **argv);
+
 void everything_free(char **pointer_array);
 int execute(char *xecutable, char **argv);
 void _puts(char *str);
