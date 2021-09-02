@@ -13,8 +13,8 @@ int main(int ac, char **av)
 	char **argv, **path_tokens;
 	char *xcuteable;
 	size_t buffer_length = 0;
-	int counter = 0;
-
+	int counter = 0, poopno;
+	/*ssize_t userinput;*/
 	(void)ac;
 	while (1)
 	{
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
-			free(buffer), exit(errno);
+			free(buffer), exit(poopno);
 		}
 		counter++;
 		if (buffer == NULL)
@@ -40,12 +40,12 @@ int main(int ac, char **av)
 		path_tokens = _getenv("PATH");
 		xcuteable = dir(argv, path_tokens, av, counter);
 		if (xcuteable != NULL)
-			execute(xcuteable, argv);
+			poopno = execute(xcuteable, argv);
 		if (argv[0][0] != '/')
 			free(xcuteable);
 		everything_free(path_tokens);
 		free(argv);
 	}
 	free(argv), free(buffer);
-	return (0);
+	return (poopno);
 }

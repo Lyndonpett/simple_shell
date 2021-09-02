@@ -9,11 +9,7 @@ int sh_exit(char **argv, char *buffer)
 {
 	free(argv);
 	free(buffer);
-	if (errno != 0)
-	{
-		exit(127);
-	}
-	exit(0);
+	exit(errno);
 }
 /**
  * sh_env -  function to help with env var

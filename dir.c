@@ -83,6 +83,7 @@ char *exe_maker(char *store, char **argv)
 int execute(char *xecutable, char **argv)
 {
 	pid_t pid;
+	int exit_code;
 
 	pid = fork();
 
@@ -96,7 +97,8 @@ int execute(char *xecutable, char **argv)
 	}
 	else
 	{
-		wait(NULL);
+		waitpid(pid, &exit_code, 0);
 	}
-	return (0);
+	exit_code = WEXITSTATUS(exit_code);
+	return (exit_code);
 }
