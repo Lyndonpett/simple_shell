@@ -13,7 +13,7 @@ int main(int ac, char **av)
 	char **argv, **path_tokens;
 	char *xcuteable;
 	size_t buffer_length = 0;
-	int counter = 0, poopno;
+	int counter = 0, poopno = 0;
 	/*ssize_t userinput;*/
 	(void)ac;
 	while (1)
