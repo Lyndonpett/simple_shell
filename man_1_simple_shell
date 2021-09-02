@@ -11,6 +11,7 @@
 .B hsh is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file.
 
 .SH OVERVIEW
+
 .B Shell is a program that reads input, interprets the line, and executes the command. Works both in interactive and non-interactive modes.
 
 .SH DIRECTIONS
@@ -19,30 +20,30 @@
 .PP
 To run hsh in interactive mode please follow the directions below:
 .P
-First compile all of the .c files in the repository by typing
+1.First compile all of the .c files in the repository by typing
 .P
 .RS
 .B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 .P
 .RE
-Now you can enter the interactive mode by typing the following in the terminal
+2.Now you can enter the interactive mode by typing the following in the terminal
 .RS
 .B $ ./hsh
 .P
 .RE
-When executed properly, a prompt "$" will appear in the terminal line waiting for a command input.
+3.When executed properly, a prompt "$" will appear in the terminal line waiting for a command input.
 
 .B NON INTERACTIVE MODE
 .PP
 To run hsh in non-interactive mode, please follow the directions below:
 .P
-First compile all of the .c files in the repository by typing
+1.First compile all of the .c files in the repository by typing
 .P
 .RS
 .B $ gcc -Wall -Werror -Wextra -pendantic *.c -o hsh
 .P
 .RE
-Now you can enter the non-interactive mode by typing the following in the terminal
+2.Now you can enter the non-interactive mode by typing the following in the terminal
 .RS
 .B $ echo "/bin/ls" | ./hsh
 
