@@ -82,7 +82,7 @@ To exit out of a command or process the user can use `ctrl+c`. `Ctrl+C` stops a 
 * `shell.h` - contains all of the prototypes and structures for our functions.
 * `shell.c` - where all the functions come into play, essentially the main file.
 	* `main` - uses all previous functions within an infinite loop to create the simple shell.
-* `man_1_simple_shell` - The man page containing information about the hsh and how to operate it.
+* `man_1_simple_shell` - The man page containing general information about the hsh and the functionality.
 
 # Bugs
 
