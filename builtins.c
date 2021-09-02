@@ -5,11 +5,11 @@
  * @buffer: The buffer character
  * Return: 0 if everything executes properly
  */
-int sh_exit(char **argv, char *buffer)
+int sh_exit(char **argv, char *buffer, int poopno)
 {
 	free(argv);
 	free(buffer);
-	exit(errno);
+	exit(poopno);
 }
 /**
  * sh_env -  function to help with env var

@@ -32,7 +32,7 @@ int main(int ac, char **av)
 		argv = tokenizer(buffer);
 		if (argv == NULL || argv[0] == NULL)
 			continue;
-		if (func_finder(argv, buffer) == 1)
+		if (func_finder(argv, buffer, poopno) == 1)
 		{
 			free(argv);
 			continue;

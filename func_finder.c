@@ -6,14 +6,13 @@
  * @buffer:Buffer being inputted
  * Return: 0 on success, 1 on fail
  */
-int func_finder(char **argv, char *buffer)
+int func_finder(char **argv, char *buffer, int poopno)
 {
 	int i;
 
 	builtins arr[] = { /*struct for builtin functions */
 			   { "cd", sh_cd },
 			   { "env", sh_env },
-			   { "exit", sh_exit },
 			   { "setenv", sh_setenv },
 			   { "unsetenv", sh_setenv },
 			   { "alias", sh_alias },
@@ -24,7 +23,7 @@ int func_finder(char **argv, char *buffer)
 	{ /* checks if its exit */
 		if (_strcmp(argv[0], "exit") == 0)
 		{
-			sh_exit(argv, buffer);
+			sh_exit(argv, buffer, poopno);
 			return (1);
 		} /* runs through the struct */
 		for (i = 0; arr[i].func; i++)
