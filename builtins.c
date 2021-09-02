@@ -3,6 +3,7 @@
  * sh_exit - function that exits
  * @argv: The string being inputted
  * @buffer: The buffer character
+ * @poopno: keeps track of exit codes
  * Return: 0 if everything executes properly
  */
 int sh_exit(char **argv, char *buffer, int poopno)
