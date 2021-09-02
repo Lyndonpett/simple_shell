@@ -64,7 +64,13 @@ Now you can enter the non-interactive mode by typing the following in the termin
 There are currently no options.
 
 .SH SEE ALSO
-sh(1), cd(1p), echo(1p), exit(1p)
+.RE
+.B Command Search and Execution
+.B sh(1), cd(1p), echo(1p), exit(1p)
+.RE
+.B System Interfaces volume
+.B exit(3p), fork(3p)
+
 
 .SH EXIT STATUS
 .B 0 - Everything was executed properly
