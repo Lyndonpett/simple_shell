@@ -66,10 +66,13 @@ There are currently no options.
 .SH SEE ALSO
 .RE
 .B Command Search and Execution
-.B sh(1), cd(1p), echo(1p), exit(1p)
+.RE
+sh(1), cd(1p), echo(1p), exit(1p)
+
 .RE
 .B System Interfaces volume
-.B exit(3p), fork(3p)
+.RE
+exit(3p), fork(3p), open(3p), exec(1p)
 
 
 .SH EXIT STATUS
