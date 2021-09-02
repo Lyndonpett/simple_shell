@@ -71,6 +71,10 @@ sh(1), cd(1p), echo(1p), exit(1p)
 .PP
 .B 1 - Error
 
+.SH OUTPUT FILES
+.RE
+.B None.
+
 .SH BUGS
 No known bugs at the moment. Please contact if any unknown bugs are present
 
